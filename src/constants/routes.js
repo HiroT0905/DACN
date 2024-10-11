@@ -7,4 +7,7 @@ export const ROUTE_PATH = {
   HISTORYAPPOINT: "/historyappoint",
   NEWS: "/news",
   CONTACT: "/contact",
+  PROFILE: "/profile",
+  SETTINGS: "/settings",
+  LOGOUT: "/logout",
 };

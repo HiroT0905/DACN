@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const FormTab = ({ onTabChange }) => {
   return (
@@ -40,7 +41,7 @@ const FormTab = ({ onTabChange }) => {
           </div>
           <textarea
             id="q2_other_text"
-            className="mt-2 w-full p-2 border border-gray-300 rounded"
+            className="resize-none mt-2 w-full p-2 border border-gray-300 rounded"
             placeholder="Vui lòng nhập bệnh khác (nếu có)"
             defaultValue={""}
           />
@@ -92,7 +93,7 @@ const FormTab = ({ onTabChange }) => {
           </div>
           <textarea
             id="q2_other_text"
-            className="mt-2 w-full p-2 border border-gray-300 rounded"
+            className="resize-none mt-2 w-full p-2 border border-gray-300 rounded"
             placeholder="Vui lòng nhập bệnh khác (nếu có)"
             defaultValue={""}
           />
@@ -161,7 +162,7 @@ const FormTab = ({ onTabChange }) => {
           </div>
           <textarea
             id="q2_other_text"
-            className="mt-2 w-full p-2 border border-gray-300 rounded"
+            className="resize-none mt-2 w-full p-2 border border-gray-300 rounded"
             placeholder="Vui lòng nhập bệnh khác (nếu có)"
             defaultValue={""}
           />
@@ -214,7 +215,7 @@ const FormTab = ({ onTabChange }) => {
           </div>
           <textarea
             id="q2_other_text"
-            className="mt-2 w-full p-2 border border-gray-300 rounded"
+            className="resize-none mt-2 w-full p-2 border border-gray-300 rounded"
             placeholder="Vui lòng nhập bệnh khác (nếu có)"
             defaultValue={""}
           />
@@ -267,7 +268,7 @@ const FormTab = ({ onTabChange }) => {
           </div>
           <textarea
             id="q2_other_text"
-            className="mt-2 w-full p-2 border border-gray-300 rounded"
+            className="resize-none mt-2 w-full p-2 border border-gray-300 rounded"
             placeholder="Vui lòng nhập bệnh khác (nếu có)"
             defaultValue={""}
           />
@@ -321,6 +322,7 @@ const FormTab = ({ onTabChange }) => {
           </div>
         </div>
         <div className="flex justify-between mt-6">
+        
           <button
             type="button"
             className="bg-gray-200 text-black px-6 py-2 rounded"
@@ -328,12 +330,15 @@ const FormTab = ({ onTabChange }) => {
           >
             Quay về
           </button>
+          <Link to="/Appointments">
           <button
             type="submit"
             className="bg-blue-500 text-white px-6 py-2 rounded"
           >
             Tiếp tục
           </button>
+        </Link>
+          
         </div>
       </form>
     </div>

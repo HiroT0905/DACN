@@ -40,7 +40,7 @@ function Contact() {
           <h2 className="text-2xl font-semibold mb-4 text-blue-700">Gửi lời nhắn cho chúng tôi</h2>
           <p className="mb-4 text-gray-600 text-sm">
             Nếu bạn có bất kỳ thắc mắc nào liên quan đến các hoạt động hiến máu tình nguyện, xin vui lòng liên hệ với chúng tôi qua địa chỉ email
-            <a href="mailto:sonmaket0201@gmail.com" target="_blank" className="text-blue-600">sonmaket0201@gmail.com</a> hoặc gửi thông tin cho chúng tôi theo mẫu bên dưới:
+            <a href="mailto:sonmaket0201@gmail.com" target="_blank" className="text-blue-600 ml-1">sonmaket0201@gmail.com</a> hoặc gửi thông tin cho chúng tôi theo mẫu bên dưới:
           </p>
     
           <form>
@@ -54,7 +54,7 @@ function Contact() {
             </div>
             <div className="mb-4">
               <label htmlFor="message" className="block text-sm text-gray-700">Lời nhắn</label>
-              <textarea id="message" placeholder="Vui lòng nhập lời nhắn" className="w-full p-2 border border-gray-300 rounded text-sm"></textarea>
+              <textarea id="message" placeholder="Vui lòng nhập lời nhắn" className="resize-none w-full p-2 border border-gray-300 rounded text-sm"></textarea>
             </div>
             <div className="flex justify-center">
               <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded text-sm">Gửi lời nhắn</button>

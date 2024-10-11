@@ -1,21 +1,48 @@
-import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import React, { useState, useEffect, useRef } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { ROUTE_PATH } from "../../constants/routes";
 
 const ClientHeader = () => {
+  const [showDropdown, setShowDropdown] = useState(false);
+  const dropdownRef = useRef(null); // Tạo ref cho dropdown
+  const location = useLocation(); // Sử dụng useLocation để theo dõi thay đổi location
+
+  const handleToggleDropdown = () => {
+    setShowDropdown(!showDropdown);
+  };
+
+  // Hàm để đóng dropdown khi bấm ra ngoài
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setShowDropdown(false);
+    }
+  };
+
+  useEffect(() => {
+    // Thêm sự kiện click khi component được mount
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      // Dọn dẹp sự kiện khi component unmount
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Đóng dropdown khi location thay đổi
+    setShowDropdown(false);
+  }, [location]); // Theo dõi thay đổi của location
+
   return (
     <>
       <div className="header-container w-full h-[57px] flex justify-center items-center text-black">
         <div className="header-content w-[1024px] h-full flex justify-between items-center">
           <div className="languages">
-            <Link to="" className="text-[16px] text-[var(--black)]">
-              {" "}
-              VN{" "}
+            <Link to="" className="text-[16px] text-[var(--black)] font-bold mr-[1px]">
+              VN
             </Link>
             |
-            <Link to="" className="text-[16px] text-[var(--gray)]">
-              {" "}
-              EN{" "}
+            <Link to="" className="text-[16px] text-[var(--gray)] font-bold ml-[1px]">
+              EN
             </Link>
           </div>
           <div className="flex items-center space-x-4">
@@ -27,15 +54,21 @@ const ClientHeader = () => {
               />
             </Link>
           </div>
-          <div className="relative inline-block text-left">
+
+          <div className="relative inline-block text-left" ref={dropdownRef}>
             <div>
-              <button className="justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+              <button
+                onClick={handleToggleDropdown}
+                className="justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              >
                 Tài khoản
               </button>
             </div>
             <div
               id="dropdown"
-              className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50 hidden"
+              className={`origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50 ${
+                showDropdown ? "" : "hidden"
+              }`}
             >
               <div
                 className="py-1"
@@ -43,27 +76,32 @@ const ClientHeader = () => {
                 aria-orientation="vertical"
                 aria-labelledby="options-menu"
               >
-                <a
-                  href="./profile.html"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  role="menuitem"
-                >
-                  Thông tin cá nhân
-                </a>
-                <a
-                  href="./settings.html"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  role="menuitem"
-                >
-                  Thiết lập cá nhân
-                </a>
-                <a
-                  href="./logout.html"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  role="menuitem"
-                >
-                  Đăng xuất tài khoản
-                </a>
+                <Link to="/Profile">
+                  <a
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    role="menuitem"
+                  >
+                    Thông tin cá nhân
+                  </a>
+                </Link>
+
+                <Link to="/settings">
+                  <a
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    role="menuitem"
+                  >
+                    Thiết lập cá nhân
+                  </a>
+                </Link>
+
+                <Link to="/logout">
+                  <a
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    role="menuitem"
+                  >
+                    Đăng xuất tài khoản
+                  </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -124,7 +162,6 @@ const ClientHeader = () => {
             >
               LIÊN HỆ
             </NavLink>
-
           </div>
         </div>
       </div>

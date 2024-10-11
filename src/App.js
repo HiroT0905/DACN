@@ -10,6 +10,9 @@ import Certificate from "./pages/Certificate/certificate";
 import HistoryAppoint from "./pages/HistoryAppoint/HistoryAppoint";
 import News from "./pages/News/News";
 import Contact from "./pages/Contact/Contact";
+import Account from "./pages/Account/Settings"
+import Settings from "./pages/Account/Settings";
+import Profile from "./pages/Account/Profile";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -47,7 +50,19 @@ const App = () => {
         },
         {
           path: ROUTE_PATH.CONTACT,
-          element: <Contact    />,
+          element: <Contact />,
+        },
+        {
+          path: ROUTE_PATH.SETTINGS,
+          element: <Settings />,
+        },
+        {
+          path: ROUTE_PATH.PROFILE,
+          element: <Profile />,
+        },
+        {
+          path: ROUTE_PATH.LOGOUT,
+          element: <logout />,
         },
       ],
     },

@@ -159,7 +159,7 @@ const Home = () => {
             </div>
           </div>
           <div className="button w-[155px] h-full flex justify-center items-center rounded-tr-[10px] rounded-br-[10px] bg-[var(--blue-light)]">
-            <button className="text-[20px] w-fullh-full">Tìm kiếm</button>
+            <button className="text-[20px] w-fullh-full text-white">Tìm kiếm</button>
           </div>
         </div>
         <div className="absolute flex justify-between items-center w-[1024px] h-auto bottom-0 left-1/2 transform-translate -translate-x-1/2 -translate-y-1/2 rounded-[10px]">
@@ -191,10 +191,10 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div className="slice-container w-full h-[450px] bg-[#fdd05e] rounded-tr-[20px] rounded-br-[20px] relative overflow-hidden">
+          <div className="slice-container bg-[var(--blue-dark)] w-full h-[450px] bg-[#fdd05e] rounded-tr-[20px] rounded-br-[20px] relative overflow-hidden">
             {/* Slice 1 */}
             <div className="slice w-full h-[450px]">
-              <div className="w-full h-[450px] bg-[var(--blue-dark)] rounded-[20px] text-white px-[68px] py-[20px]">
+              <div className="w-full h-[450px] rounded-[20px] text-white px-[68px] py-[20px]">
                 <h1 className="text-[20px] text-center mb-[20px]">
                   Được bồi dưỡng trực tiếp
                 </h1>
@@ -215,7 +215,7 @@ const Home = () => {
             </div>
             {/* Slice 2 */}
             <div className="slice w-full h-[450px]">
-              <div className="w-full h-[450px] bg-[var(--blue-dark)] rounded-[20px] text-white px-[68px] py-[20px]">
+              <div className="w-full h-[450px] rounded-[20px] text-white px-[68px] py-[20px]">
                 <h1 className="text-[20px] text-center mb-[20px]">
                   Được cấp Giấy chứng nhận hiến máu tình nguyện
                 </h1>
@@ -243,7 +243,7 @@ const Home = () => {
             </div>
             {/* Slice 3 */}
             <div className="slice w-full h-[450px]">
-              <div className="w-full h-[450px] bg-[var(--blue-dark)] rounded-[20px] text-white px-[68px] py-[20px]">
+              <div className="w-full h-[450px] rounded-[20px] text-white px-[68px] py-[20px]">
                 <h1 className="text-[20px] text-center mb-[20px]">
                   Được tư vấn về sức khoẻ
                 </h1>
@@ -274,11 +274,11 @@ const Home = () => {
             </div>
             {/* Button previous */}
             <button className="w-[32px] h-[50px] bg-[rgba(255,255,255,0.2)] rounded-[4px] absolute top-[40%] left-[10px] z-50">
-              <i className="fa-solid fa-angle-left" />
+              <i className="fa-solid fa-angle-left text-white" />
             </button>
             {/* Button next */}
             <button className="w-[32px] h-[50px] bg-[rgba(255,255,255,0.2)] rounded-[4px] absolute top-[40%] right-[10px] z-50">
-              <i className="fa-solid fa-angle-right" />
+              <i className="fa-solid fa-angle-right text-white" />
             </button>
           </div>
         </div>

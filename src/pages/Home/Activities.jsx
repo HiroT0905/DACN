@@ -138,11 +138,11 @@ const Activities = () => {
             </div>
           </div>
           {/* Button previous */}
-          <button className="w-[32px] h-[50px] bg-[#333333] rounded-[4px] absolute top-[40%] left-[10px] z-500">
+          <button className="w-[32px] h-[52px] bg-zinc-800/[0.7] rounded-[4px] absolute top-[40%] left-[10px] z-500">
             <i className="fa-solid fa-angle-left act-left text-white" />
           </button>
           {/* Button next */}
-          <button className="w-[32px] h-[50px] bg-[#333333] rounded-[4px] absolute top-[40%] right-[10px] z-50">
+          <button className="w-[32px] h-[52px] bg-zinc-800/[0.7] rounded-[4px] absolute top-[40%] right-[10px] z-50">
             <i className="fa-solid fa-angle-right act-right text-white" />
           </button>
         </div>

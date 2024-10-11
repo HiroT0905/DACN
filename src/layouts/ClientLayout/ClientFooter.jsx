@@ -21,7 +21,7 @@ const ClientFooter = () => {
               </h1>
               <h2 className="text-[16px] font-bold">Khu AB</h2>
               <p className="text-[14px]">
-                <i className="fa-solid fa-location-dot" />
+                <i className="fa-solid fa-location-dot mr-2" />
                 475A Đ. Điện Biên Phủ, Phường 25, Bình Thạnh, Hồ Chí Minh, Việt
                 Nam
               </p>
@@ -29,15 +29,15 @@ const ClientFooter = () => {
             <div className="content text-white !flex flex-col gap-[12px] mt-[60px]">
               <h2 className="text-[16px] font-bold">Khu E</h2>
               <p className="text-[14px]">
-                <i className="fa-solid fa-location-dot" />
+                <i className="fa-solid fa-location-dot mr-2" />
                 10/80c Song Hành Xa Lộ Hà Nội, Phường Tân Phú, Quận 9, Hồ Chí
                 Minh, Việt Nam
               </p>
             </div>
           </div>
           <div className="w-full flex flex-col justify-between">
-            <div className="logo mb-[40px]" />
-            <div className="content text-white !flex flex-col gap-[12px]">
+            <div className="logo" />
+            <div className="content text-white !flex flex-col gap-[12px] mt-[62px]">
               <h2 className="text-[16px]">
                 <i className="fa-solid fa-phone" /> Liên hệ giờ hành chính
               </h2>
@@ -46,7 +46,7 @@ const ClientFooter = () => {
                 0706389781{" "}
               </Link>
             </div>
-            <div className="content text-white !flex flex-col gap-[12px]">
+            <div className="content text-white !flex flex-col gap-[12px] mb-[20px]">
               <h2 className="text-[16px]">
                 <i className="fa-solid fa-phone" /> Liên hệ giờ hành chính
               </h2>

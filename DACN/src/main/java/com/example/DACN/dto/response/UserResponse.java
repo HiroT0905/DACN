@@ -10,6 +10,7 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class UserResponse {
     private String username;
     private UserInfoDTO userInfo;

@@ -7,11 +7,10 @@ import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
 
+@Getter
 @Entity
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
 @Setter
 @Builder
 public class UserInfo {
@@ -19,14 +18,13 @@ public class UserInfo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @OneToOne
+    @JoinColumn(name = "user_cccd", referencedColumnName = "CCCD")
+    private User user;
     private String fullName;
     private LocalDate dob;
     private String sex;
     private String phone;
     private String address;
     private String email;
-    @OneToOne(fetch = FetchType.LAZY)
-    @MapsId
-    @JsonIgnore
-    private user user;
 }

@@ -1,5 +1,6 @@
 package com.example.DACN.service;
 
+import com.example.DACN.dto.request.ApiResponse;
 import com.example.DACN.dto.request.UserCreationRequest;
 import com.example.DACN.dto.request.UserUpdateRequest;
 import com.example.DACN.dto.response.UserResponse;
@@ -9,8 +10,8 @@ import com.example.DACN.exception.ErrorCode;
 import com.example.DACN.exception.UserNotFoundException;
 import com.example.DACN.mapper.UserInfoMapper;
 import com.example.DACN.mapper.UserMapper;
+import com.example.DACN.model.User;
 import com.example.DACN.model.UserInfo;
-import com.example.DACN.model.user;
 import com.example.DACN.repository.UserInfoRepo;
 import com.example.DACN.repository.UserRepo;
 import lombok.RequiredArgsConstructor;
@@ -27,37 +28,37 @@ import java.util.stream.Collectors;
 public class UserService {
     @Autowired
     UserRepo userRepository;
-@Autowired
+    @Autowired
     UserInfoRepo userInfoRepository;
-@Autowired
+    @Autowired
     private UserInfoRepo userInfoRepo;
 //
 
+    @Autowired
     private UserMapper userMapper;
 
+    @Autowired
     private UserInfoMapper userInfoMapper;
 
     public List<UserResponse> getAllUsers() {
         return userRepository.findAll().stream().map(userMapper::toUserResponse).collect(Collectors.toList());
     }
 
-    public UserResponse getUserById(long id) {
-        return userMapper.toUserResponse(userRepository.findById(id).orElseThrow(()->new UserNotFoundException(String.valueOf(ErrorCode.USER_NOTFOUND))));
+    public UserResponse getUserById(String userName) {
+        return userMapper.toUserResponse(userRepository.findByUsername(userName));
     }
 
         public UserResponse createUser(UserCreationRequest request){
 
-            user user = userMapper.toUser(request);
-            UserInfo userInfo = userInfoMapper.toUserInfo(request);
-
-            userInfo.setUser(user);
-            user.setUserInfo(userInfo);
-    //        user.setPassword(passwordEncoder.encode(request.getPassword()));
-            userInfo.setUser(user);
-            user.setUserInfo(userInfo);
+            User user = userMapper.toUser(request);
+//            UserInfo userInfo = userInfoMapper.toUserInfo(request.);
+            UserInfo usi = user.getUserInfo();
+//            user.setPassword(passwordEncoder.encode(request.getPassword()));
+            usi.setUser(user);
+            user.setUserInfo(usi);
             try {
                 // Lưu `User` và tự động lưu `UserInfo` do cascade
-                user savedUser = userRepository.save(user);
+                User savedUser = userRepository.save(user);
                 return userMapper.toUserResponse(savedUser);
             } catch (DataIntegrityViolationException exception) {
                 throw new AppException(ErrorCode.USER_EXISTED);
@@ -65,30 +66,25 @@ public class UserService {
 //            return userMapper.toUserResponse(saveduser);
         }
 
-    public UserResponse updateUser(long id, UserUpdateRequest request){
-        user existingUser =(userRepository.findById(id).orElseThrow(()-> new UserNotFoundException(String.valueOf(ErrorCode.USER_NOTFOUND))));
-        userMapper.updateUser(existingUser,request);
-//        existingUser.setUserInfoD(request);
-        existingUser.setPassword(request.getPassword());
-        UserInfo existingUserInfo = existingUser.getUserInfo();
-        if(existingUserInfo == null) {
-            // Tạo mới UserInfo nếu chưa tồn tại
-            existingUserInfo = new UserInfo();
-            existingUser.setUserInfo(existingUserInfo);
+    public UserResponse updateUser(String userName, UserUpdateRequest request){
+
+        if (request.getUserInfo() == null) {
+            throw new IllegalArgumentException("UserInfo cannot be null");
         }
+            User user = userRepository.findByUsername(userName);
+            UserInfo usi = user.getUserInfo();
+            usi.setUser(user);
 
-        UserInfoDTO userInfoDTO = request.getUserInfo();
-        existingUserInfo.setFullName(userInfoDTO.getFullName());
-        existingUserInfo.setDob(userInfoDTO.getDob());
-        existingUserInfo.setSex(userInfoDTO.getSex());
-        existingUserInfo.setPhone(userInfoDTO.getPhone());
-        existingUserInfo.setAddress(userInfoDTO.getAddress());
+    //            UserInfo uin4 = userMapper.toUserInfo(request.getUserInfo());
+    //            user.setUserInfo(uin4);
+    //            uin4.setUser(user);
+            userMapper.updateUser(user, request);
 
+            return userMapper.toUserResponse(userRepository.save(user));
 
-        return userMapper.toUserResponse(userRepository.save(existingUser));
     }
 
-    public void DeleteUser(long id){
+    public void DeleteUser(String id){
         userRepository.deleteById(id);
     }
 

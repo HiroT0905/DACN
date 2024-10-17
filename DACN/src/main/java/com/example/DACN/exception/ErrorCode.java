@@ -5,10 +5,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
 @Getter
-@AllArgsConstructor@NoArgsConstructor
+
 public enum ErrorCode {
-    UNCATEGORIZE(999, "Uncategorized"),
+    UNCATEGORIZED_EXCEPTION(999, "Uncategorized"),
     USER_EXISTED(1002, "User already existed"),
     USER_NOTFOUND(1003, "User not found"),
     ;
@@ -16,4 +17,16 @@ public enum ErrorCode {
     private int code;
     private String message;
 
+    ErrorCode(int code, String message) {
+        this.code = code;
+        this.message = message;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 }

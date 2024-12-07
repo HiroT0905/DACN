@@ -15,7 +15,7 @@ function Contact() {
           </div>
         
           <p className="text-base mb-6">
-            <a href="mailto:sonmaket0201@gmail.com" target="_blank">sonmaket0201@gmail.com</a>
+            {/* <a href="mailto:sonmaket0201@gmail.com" target="_blank">sonmaket0201@gmail.com</a> */}
           </p>
         
           {/* Divider */}
@@ -40,7 +40,7 @@ function Contact() {
           <h2 className="text-2xl font-semibold mb-4 text-blue-700">Gửi lời nhắn cho chúng tôi</h2>
           <p className="mb-4 text-gray-600 text-sm">
             Nếu bạn có bất kỳ thắc mắc nào liên quan đến các hoạt động hiến máu tình nguyện, xin vui lòng liên hệ với chúng tôi qua địa chỉ email
-            <a href="mailto:sonmaket0201@gmail.com" target="_blank" className="text-blue-600 ml-1">sonmaket0201@gmail.com</a> hoặc gửi thông tin cho chúng tôi theo mẫu bên dưới:
+          {/* <a href="mailto:sonmaket0201@gmail.com" target="_blank" className="text-blue-600 ml-1">sonmaket0201@gmail.com</a> hoặc gửi thông tin cho chúng tôi theo mẫu bên dưới: */}
           </p>
     
           <form>

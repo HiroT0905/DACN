@@ -10,4 +10,6 @@ export const ROUTE_PATH = {
   PROFILE: "/profile",
   SETTINGS: "/settings",
   LOGOUT: "/logout",
+  LOGIN: "/login",
+  REGISTRATION: "/register"
 };

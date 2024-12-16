@@ -1,19 +1,17 @@
 package com.example.DACN.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.*;
-import lombok.experimental.FieldDefaults;
-import org.springframework.context.annotation.Primary;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 @Getter
 @Setter
@@ -43,6 +41,36 @@ public class User implements UserDetails {
     @ManyToOne
     @JoinColumn(name = "role_id" , referencedColumnName = "id", nullable = false)
     private Role role ;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+//    @JsonIgnore
+    @JsonManagedReference
+    @Column(nullable = true)
+    private List<Appointment> appointments = new ArrayList<>();
+
+
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
+    @Column(nullable = true)
+    private Set<BloodDonationHistory> bloodDonationHistories = new HashSet<>();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

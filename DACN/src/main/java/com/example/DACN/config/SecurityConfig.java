@@ -1,8 +1,6 @@
 package com.example.DACN.config;
 
-import com.example.DACN.service.JWTUtils;
 import com.example.DACN.service.UserDetailsService;
-import io.jsonwebtoken.security.Password;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

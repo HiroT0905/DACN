@@ -97,30 +97,37 @@ package com.example.DACN.controller;//package com.example.DACN.controller;
 //
 //
 
-import com.example.DACN.dto.request.ApiResponse;
+import com.example.DACN.dto.ApiResponse;
+import com.example.DACN.dto.LoginRequest;
+import com.example.DACN.dto.PasswordResetDTO;
 import com.example.DACN.model.User;
-import com.example.DACN.service.UserManagementService;
-import lombok.Getter;
+import com.example.DACN.repository.UsersRepo;
+import com.example.DACN.service.impl.UserManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController
 public class UserController {
     @Autowired
     private UserManagementService userManagementService;;
+    @Autowired
+    private UsersRepo usersRepo;
+
     @PostMapping("/auth/register")
-    public ResponseEntity<ApiResponse> register(@RequestBody ApiResponse registrationRequest) {
-        return  ResponseEntity.ok(userManagementService.register(registrationRequest));
+    public ResponseEntity<ApiResponse> register(@RequestBody User user) {
+        return  ResponseEntity.ok(userManagementService.register(user));
     }
 
     @PostMapping("/auth/login")
-    public ResponseEntity<ApiResponse> login (@RequestBody ApiResponse req){
-        return ResponseEntity.ok(userManagementService.login(req));
+    public ResponseEntity<ApiResponse> login (@RequestBody LoginRequest loginRequest){
+        var response = userManagementService.login(loginRequest);
+        return ResponseEntity.status(response.getCode()).body(response);
     }
 
     @PostMapping("/auth/refresh")
@@ -152,5 +159,32 @@ public class UserController {
     @DeleteMapping("/admin/delete/{cccd}")
     public ResponseEntity<ApiResponse> updateUser(@PathVariable String cccd){
         return ResponseEntity.ok(userManagementService.deleteUser(cccd));
+    }
+    //Doi mat khau
+
+
+//    private JavaMailSender mailSender;
+    @PostMapping("/reset-password-request")
+    public ResponseEntity<String> resetPasswordRequest(@RequestBody Map<String, String> request) {
+        String email = request.get("email");
+        boolean emailSent = userManagementService.sendResetPasswordEmail(email);
+
+        if (emailSent) {
+            return ResponseEntity.ok("Password reset email sent successfully.");
+        } else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Email not found.");
+        }
+    }
+
+    // API cập nhật mật khẩu
+    @PutMapping("/reset-password")
+    public ResponseEntity<String> resetPassword(@RequestBody PasswordResetDTO passwordResetDTO) {
+        boolean isUpdated = userManagementService.resetPassword(passwordResetDTO.getEmail(), passwordResetDTO.getNewPassword(), passwordResetDTO.getToken());
+
+        if (isUpdated) {
+            return ResponseEntity.ok("Password updated successfully.");
+        } else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid token or email.");
+        }
     }
 }

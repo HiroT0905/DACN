@@ -1,8 +1,6 @@
-package com.example.DACN.dto.request;
+package com.example.DACN.dto;
 
-import com.example.DACN.model.Role;
-import com.example.DACN.model.User;
-import com.example.DACN.model.UserInfo;
+import com.example.DACN.model.*;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -26,20 +24,17 @@ public class ApiResponse {
     String refreshToken;
     String expirationTime;
 
+    String role ;
+    LoginRequest loginRequest;
+    UserDTO user;
+    EventDTO eventDTO;
+    List<EventDTO> eventDTOList;
+    List<UserDTO> userList;
 
-    String cccd;
-    String password;
+    DonationUnitDTO donationUnitDTO;
+    List<DonationUnitDTO> donationUnitList;
+    HealthCheckDTO healthCheckDTO;
+    AppointmentDTO appointmentDTO;
+    List<AppointmentDTO> appointmentDTOList;
 
-
-    String fullName;
-    LocalDate dob;
-    String sex;
-    String phone;
-    String email;
-    String address;
-
-    User user;
-    UserInfo userInfo;
-    Role role;
-    List<User> userList;
 }

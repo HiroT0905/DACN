@@ -1,5 +1,6 @@
 package com.example.DACN.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -23,6 +24,7 @@ public class Role {
 
     private String description;
     @OneToMany(mappedBy = "role")
+    @JsonIgnore
     private Set<User> users = new HashSet<>();
 
     public Role(Long id){

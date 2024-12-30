@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f04e95a3-3de7-40d1-a713-d7b17d7f6e2e" name="Changes" comment="CRUD">
+    <list default="true" id="f04e95a3-3de7-40d1-a713-d7b17d7f6e2e" name="Changes" comment="ResetPassword">
       <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/BloodInventoryController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/FaqController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/HealthCheckController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/NewsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/PasswordController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/BloodInventoryDTO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/FaqDTO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/HealthMetrics.java" afterDir="false" />
@@ -19,7 +18,6 @@
       <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/model/BloodInventory.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/model/Faq.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/model/News.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/model/PasswordResetToken.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/repository/BloodInventoryRepo.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/repository/FaqRepo.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/repository/NewsRepo.java" afterDir="false" />
@@ -33,20 +31,13 @@
       <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/interfac/IFaqService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/interfac/INewsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/config/CorsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/config/JWTAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/config/JWTAuthFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/AppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/AppointmentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/DonationUnitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/DonationUnitController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/EventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/ApiResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/ApiResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/AppointmentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/AppointmentDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/BloodDonationHistoryDTO.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/EventDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/EventDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/PasswordResetDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/PasswordResetDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/UserDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/exception/EventValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/exception/EventValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/model/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/model/Appointment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/model/BloodDonationHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/model/BloodDonationHistory.java" afterDir="false" />
@@ -59,12 +50,9 @@
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/AppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/AppointmentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/DonationUnitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/DonationUnitService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/EventService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/UserManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/UserManagementService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/interfac/IAppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/interfac/IAppointmentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/interfac/IDonationUnitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/interfac/IDonationUnitService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/interfac/IEventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/interfac/IEventService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/utils/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/pages/auth/LoginPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/pages/auth/LoginPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -120,31 +108,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.DacnApplication.executor": "Run",
-    "git-widget-placeholder": "BE",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/DACN",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "File.Encoding",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.DacnApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;BE&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/DACN&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.DACN.dto" />
@@ -241,7 +229,8 @@
       <workItem from="1735347552385" duration="13833000" />
       <workItem from="1735536306603" duration="83000" />
       <workItem from="1735541538943" duration="236000" />
-      <workItem from="1735544434817" duration="531000" />
+      <workItem from="1735544434817" duration="738000" />
+      <workItem from="1735545262703" duration="3256000" />
     </task>
     <task id="LOCAL-00001" summary="10.10">
       <option name="closed" value="true" />
@@ -275,7 +264,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734326648437</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="ResetPassword">
+      <option name="closed" value="true" />
+      <created>1735545026745</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1735545026745</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,7 +318,8 @@
     <MESSAGE value="CHinh sua Entity va GetProFile" />
     <MESSAGE value="Chinh sua entity va chuc nang getProfile" />
     <MESSAGE value="CRUD" />
-    <option name="LAST_COMMIT_MESSAGE" value="CRUD" />
+    <MESSAGE value="ResetPassword" />
+    <option name="LAST_COMMIT_MESSAGE" value="ResetPassword" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

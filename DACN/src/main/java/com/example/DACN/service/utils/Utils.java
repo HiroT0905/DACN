@@ -89,12 +89,13 @@ package com.example.DACN.service.utils;
 import com.example.DACN.dto.UserDTO;
 import com.example.DACN.dto.*;
 import com.example.DACN.model.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.security.SecureRandom;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Utils {
@@ -123,37 +124,36 @@ public class Utils {
 //                .build();
 
         UserDTO userDTO = new UserDTO();
-
         userDTO.setUsername(user.getUsername());
-
         userDTO.setEmail(user.getEmail());
         userDTO.setPhone(user.getPhone());
         userDTO.setRole(user.getRole());
         userDTO.setUserInfoDTO(mapUserInfoEntityToUserInfoDTO(user.getUserInfo()));
         if (user.getAppointments() != null){
             userDTO.setAppointments(user.getAppointments().stream().map(Utils::mapAppointmentEntityToSimpleDTO).collect(Collectors.toList()));
-
-        }
-        if (user.getBloodDonationHistories() != null){
-            userDTO.setBloodDonationHistories(user.getBloodDonationHistories().stream().map(Utils::mapBloodDonationHistoryEntityToSimpleDTO).collect(Collectors.toSet()));
         }
 
         return userDTO;
     }
-    public static BloodDonationHistoryDTO mapBloodDonationHistoryEntityToSimpleDTO(BloodDonationHistory history) {
-        return BloodDonationHistoryDTO.builder()
-                .id(history.getId())
-                .donationDate(history.getDonationDateTime())
-                .bloodAmount(history.getBloodAmount())
-                .donationLocation(history.getDonationLocation())
-                .notes(history.getNotes())
-                .build(); // Simplified to avoid nested references
-    }
+
     public static AppointmentDTO mapAppointmentEntityToSimpleDTO(Appointment appointment) {
+        Long  bloodInventoryId = null;
+        if (appointment.getBloodInventory() != null) {
+            // Nếu bloodInventory không phải là null, bạn mới có thể gọi getId()
+            bloodInventoryId = appointment.getBloodInventory().getId();
+        } else {
+            // Nếu bloodInventory là null, xử lý trường hợp này
+            bloodInventoryId = null; // Hoặc giá trị mặc định khác tùy theo yêu cầu
+        }
         return AppointmentDTO.builder()
                 .id(appointment.getId())
+                .status(appointment.getStatus().name())
                 .appointmentDateTime(appointment.getAppointmentDateTime())
                 .bloodAmount(appointment.getBloodAmount())
+                .healthCheckId(appointment.getHealthcheck().getId())
+                .eventId(appointment.getEvent().getId())
+//              .
+                .bloodInventoryId(bloodInventoryId)
 //                .eventName(appointment.getEvent().getName())
                 .build(); // Simplified to avoid nested references
     }
@@ -165,6 +165,18 @@ public class Utils {
                 .sex(userInfo.getSex())
                 .address(userInfo.getAddress())
                 .build();
+    }
+
+    public static MultipartFile convertBase64ToMultipartFile(String base64String) {
+        try {
+            String[] parts = base64String.split(",");
+            String fileType = parts[0].split(";")[0].split(":")[1];
+            byte[] data = Base64.getDecoder().decode(parts[1]);
+
+            return new MockMultipartFile("file", "uploadedFile", fileType, data);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to convert Base64 string to MultipartFile: " + e.getMessage(), e);
+        }
     }
 
     public static DonationUnitDTO mapUnitEntityToUnitDTO(DonationUnit unit) {
@@ -188,6 +200,7 @@ public class Utils {
         return DonationUnitDTO.builder()
                 .id(unit.getId())
                 .name(unit.getName())
+                .location(unit.getLocation())
                 .phone(unit.getPhone())
                 .email(unit.getEmail())
                 .unitPhotoUrl(unit.getUnitPhotoUrl())
@@ -203,6 +216,7 @@ public class Utils {
 
         return EventDTO.builder()
                 .id(event.getId())
+                .name(event.getName())
                 .eventDate(event.getEventDate())
                 .eventStartTime(event.getEventStartTime())
                 .eventEndTime(event.getEventEndTime())
@@ -226,6 +240,7 @@ public class Utils {
                 .healthCheckId(appointment.getHealthcheck() != null ? appointment.getHealthcheck().getId() : null) // Xử lý null
                 .bloodDonationHistoryId(appointment.getBloodDonationHistory() != null ? appointment.getBloodDonationHistory().getId() : null) // Xử lý null
                 .status(appointment.getStatus().toString())
+                .nextDonationEligibleDate(appointment.getNextDonationEligibleDate())
                 .build();
     }
 
@@ -246,16 +261,6 @@ public class Utils {
                 .build();
     }
 
-    public static BloodDonationHistoryDTO mapBloodDonationHistoryEntityToDTO(BloodDonationHistory history) {
-        return BloodDonationHistoryDTO.builder()
-                .id(history.getId())
-                .donationDate(history.getDonationDateTime())
-                .bloodAmount(history.getBloodAmount())
-                .donationLocation(history.getDonationLocation())
-                .notes(history.getNotes())
-                .appointmentId(history.getAppointment().getId())
-                .build();
-    }
 
     public static List<UserDTO> mapUserListEntityToDTO(List<User> userList) {
         if (userList == null) return List.of();
@@ -266,13 +271,107 @@ public class Utils {
         if (unitList == null) return List.of();
         return unitList.stream().map(Utils::mapUnitEntityToUnitDTO).collect(Collectors.toList());
     }
+    public static List<NewsDTO> mapNewsListEntityToDTO(List<News> newsList){
+        if(newsList == null ) return List.of();
+        return newsList.stream().map(Utils::mapNewsEntityToNewsDTO).collect(Collectors.toList());
+    }
+
+    public static NewsDTO mapNewsEntityToNewsDTO(News news) {
+        NewsDTO newsDTO = new NewsDTO();
+        newsDTO.setId(news.getId());
+        newsDTO.setTitle(news.getTitle());
+        newsDTO.setContent(news.getContent());
+        newsDTO.setAuthor(news.getAuthor());
+        newsDTO.setImages(news.getImageUrl());
+        newsDTO.setTimestamp(news.getTimestamp());
+        return newsDTO;
+    }
+
+    public static List<FaqDTO> mapFaqListEntityToDTO(List<Faq> faqList){
+        if(faqList == null ) return List.of();
+        return faqList.stream().map(Utils::mapFaqEntityToFaqDTO).collect(Collectors.toList());
+    }
+
+    public static FaqDTO mapFaqEntityToFaqDTO(Faq faq) {
+        FaqDTO dto = new FaqDTO();
+        dto.setId(faq.getId());
+        dto.setTitle(faq.getTitle());
+        dto.setDescription(faq.getDescription());
+        dto.setTimestamp(faq.getTimestamp());
+        return dto;
+    }
+    public static BloodInventoryDTO mapBloodInventoryToDTO(BloodInventory bI){
+
+        BloodInventoryDTO dto = new BloodInventoryDTO();
+        dto.setId(bI.getId());
+        dto.setDonationType(bI.getBloodType());
+        dto.setQuantity(bI.getQuantity());
+        dto.setLastUpdated(bI.getLastUpdated());
+        dto.setExpirationDate(bI.getExpirationDate());
+        if (bI.getAppointment() != null){
+            dto.setAppointmentDTO(mapAppointmentEntityToDTO(bI.getAppointment()));
+        }else {
+            dto.setAppointmentDTO(null);
+        }
+        return dto;
+    }
+    public  static List<BloodInventoryDTO> mapListBloodInventoryToDTO(List<BloodInventory> bIList){
+        if(bIList == null ) return List.of();
+        return bIList.stream().map(Utils::mapBloodInventoryToDTO).collect(Collectors.toList());
+    }
+
 
     public static List<EventDTO> mapEventListEntityToDTO(List<Event> eventList) {
-        if (eventList == null) return List.of();
+         if (eventList == null) return List.of();
         return eventList.stream().map(Utils::mapEventEntityToEventDTO).collect(Collectors.toList());
     }
     public static List<AppointmentDTO> mapAppointmentListToDTO(List<Appointment> appointmentList) {
         if (appointmentList == null) return List.of();
         return appointmentList.stream().map(Utils::mapAppointmentEntityToDTO).collect(Collectors.toList());
+    }
+
+    private static class MockMultipartFile implements MultipartFile {
+        public MockMultipartFile(String file, String uploadedFile, String fileType, byte[] data) {
+        }
+
+        @Override
+        public String getName() {
+            return "";
+        }
+
+        @Override
+        public String getOriginalFilename() {
+            return "";
+        }
+
+        @Override
+        public String getContentType() {
+            return "";
+        }
+
+        @Override
+        public boolean isEmpty() {
+            return false;
+        }
+
+        @Override
+        public long getSize() {
+            return 0;
+        }
+
+        @Override
+        public byte[] getBytes() throws IOException {
+            return new byte[0];
+        }
+
+        @Override
+        public InputStream getInputStream() throws IOException {
+            return null;
+        }
+
+        @Override
+        public void transferTo(File dest) throws IOException, IllegalStateException {
+
+        }
     }
 }

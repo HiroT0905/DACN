@@ -18,5 +18,5 @@ public class UserDTO {
     private Role role ;
 
     private List<AppointmentDTO> appointments = new ArrayList<>();
-    private Set<BloodDonationHistoryDTO> bloodDonationHistories;
+    private Set<BloodInventoryDTO> bloodDonationHistories;
 }

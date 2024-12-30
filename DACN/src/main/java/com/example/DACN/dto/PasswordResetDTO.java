@@ -1,33 +1,16 @@
 package com.example.DACN.dto;
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
 // PasswordResetDTO.java
+
+@Setter
+@Getter
 public class PasswordResetDTO {
-    private String email;
+    // Getters and Setters
     private String newPassword;
     private String token;
 
-    // Getters and Setters
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getNewPassword() {
-        return newPassword;
-    }
-
-    public void setNewPassword(String newPassword) {
-        this.newPassword = newPassword;
-    }
-
-    public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
-    }
 }

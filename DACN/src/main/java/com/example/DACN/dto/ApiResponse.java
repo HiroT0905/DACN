@@ -37,4 +37,13 @@ public class ApiResponse {
     AppointmentDTO appointmentDTO;
     List<AppointmentDTO> appointmentDTOList;
 
+    NewsDTO newsDTO;
+    List<NewsDTO> newsDTOList;
+
+
+    FaqDTO faqDTO;
+    List<FaqDTO> faqDTOList;
+
+    BloodInventoryDTO bloodInventoryDTO;
+    List<BloodInventoryDTO> bloodInventoryDTOList;
 }

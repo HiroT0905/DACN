@@ -40,13 +40,22 @@ public class Appointment {
     @JsonManagedReference
     private Healthcheck healthcheck;
 
+//    @OneToOne(mappedBy = "appointment", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    @JsonManagedReference
+//    private BloodInventory bloodInventory;
+
     @OneToOne(mappedBy = "appointment", cascade = CascadeType.ALL)
     @JsonManagedReference
     private BloodDonationHistory bloodDonationHistory;
 
+    @OneToOne
+    private BloodInventory  bloodInventory;
+
     private LocalDateTime appointmentDateTime;
 
     private Integer bloodAmount;
+
+    private LocalDateTime nextDonationEligibleDate;
 
     private AppointmentStatus status;
 }

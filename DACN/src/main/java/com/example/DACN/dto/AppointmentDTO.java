@@ -1,6 +1,7 @@
 package com.example.DACN.dto;
 
 
+import com.example.DACN.model.Event;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.cglib.core.Local;
@@ -18,10 +19,10 @@ public class AppointmentDTO {
     private LocalDateTime appointmentDateTime;
     private Integer bloodAmount;
     private String status;
-
     private Long bloodDonationHistoryId;
     private Long healthCheckId;
     private String userId;
     private Long eventId;
-
+    private LocalDateTime nextDonationEligibleDate;
+    private Long bloodInventoryId;
 }

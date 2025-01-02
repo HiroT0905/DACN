@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f04e95a3-3de7-40d1-a713-d7b17d7f6e2e" name="Changes" comment="ResetPassword">
+    <list default="true" id="f04e95a3-3de7-40d1-a713-d7b17d7f6e2e" name="Changes" comment="XÓa linh tinh">
       <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/BloodInventoryController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/FaqController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/HealthCheckController.java" afterDir="false" />
@@ -31,9 +31,11 @@
       <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/interfac/IFaqService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/interfac/INewsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/AppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/AppointmentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/DonationUnitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/DonationUnitController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/EventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/ApiResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/ApiResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/AppointmentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/AppointmentDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/BloodDonationHistoryDTO.java" beforeDir="false" />
@@ -44,16 +46,17 @@
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/model/DonationUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/model/DonationUnit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/model/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/model/Event.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/model/Healthcheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/model/Healthcheck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/model/status/AppointmentStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/model/status/AppointmentStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/repository/AppointmentRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/repository/AppointmentRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/repository/EventRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/repository/EventRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/AwsS3Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/AwsS3Service.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/AppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/AppointmentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/DonationUnitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/DonationUnitService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/EventService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/UserManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/UserManagementService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/interfac/IAppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/interfac/IAppointmentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/interfac/IDonationUnitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/interfac/IDonationUnitService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/interfac/IEventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/interfac/IEventService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/pages/auth/LoginPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/pages/auth/LoginPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,31 +111,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.DacnApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;BE&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/DACN&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.DacnApplication.executor": "Debug",
+    "git-widget-placeholder": "BE",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/DACN",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "File.Encoding",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.DACN.dto" />
@@ -230,7 +233,15 @@
       <workItem from="1735536306603" duration="83000" />
       <workItem from="1735541538943" duration="236000" />
       <workItem from="1735544434817" duration="738000" />
-      <workItem from="1735545262703" duration="3256000" />
+      <workItem from="1735545262703" duration="4069000" />
+      <workItem from="1735583214930" duration="203000" />
+      <workItem from="1735583767076" duration="1432000" />
+      <workItem from="1735640734520" duration="669000" />
+      <workItem from="1735719742590" duration="11991000" />
+      <workItem from="1735739620929" duration="1300000" />
+      <workItem from="1735753265779" duration="537000" />
+      <workItem from="1735758368220" duration="8767000" />
+      <workItem from="1735791598304" duration="16370000" />
     </task>
     <task id="LOCAL-00001" summary="10.10">
       <option name="closed" value="true" />
@@ -272,7 +283,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735545026745</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="XÓa linh tinh">
+      <option name="closed" value="true" />
+      <created>1735549918272</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1735549918272</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,7 +338,8 @@
     <MESSAGE value="Chinh sua entity va chuc nang getProfile" />
     <MESSAGE value="CRUD" />
     <MESSAGE value="ResetPassword" />
-    <option name="LAST_COMMIT_MESSAGE" value="ResetPassword" />
+    <MESSAGE value="XÓa linh tinh" />
+    <option name="LAST_COMMIT_MESSAGE" value="XÓa linh tinh" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -335,7 +355,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/UserManagementService.java</url>
-          <line>184</line>
+          <line>187</line>
           <properties class="com.example.DACN.service.impl.UserManagementService">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -344,7 +364,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/UserManagementService.java</url>
-          <line>208</line>
+          <line>211</line>
           <properties class="com.example.DACN.service.impl.UserManagementService">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -389,7 +409,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/EventController.java</url>
-          <line>102</line>
+          <line>104</line>
           <properties class="com.example.DACN.controller.EventController" method="updateEvent">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -470,7 +490,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/UserManagementService.java</url>
-          <line>414</line>
+          <line>417</line>
           <properties class="com.example.DACN.service.impl.UserManagementService" method="resetPassword">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -531,9 +551,54 @@
           </properties>
           <option name="timeStamp" value="130" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/UserController.java</url>
+          <line>40</line>
+          <properties class="com.example.DACN.controller.UserController" method="login">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="133" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/UserManagementService.java</url>
+          <line>127</line>
+          <properties class="com.example.DACN.service.impl.UserManagementService" method="login">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="134" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/UserController.java</url>
+          <line>55</line>
+          <properties class="com.example.DACN.controller.UserController" method="getProfile">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="135" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/AppointmentController.java</url>
+          <line>49</line>
+          <properties class="com.example.DACN.controller.AppointmentController" method="getAppointmentPendingUser">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="136" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/EventController.java</url>
+          <line>71</line>
+          <properties class="com.example.DACN.controller.EventController" method="getEvents">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="137" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/UserManagementService.java</url>
-          <line>210</line>
+          <line>213</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -591,6 +656,7 @@
         <watch expression="this" />
         <watch expression="appointment" language="JAVA" />
         <watch expression="appointment" />
+        <watch expression="this.h" custom="java.lang.reflect.Proxy" />
       </configuration>
     </watches-manager>
   </component>

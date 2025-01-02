@@ -37,7 +37,7 @@ public class Event {
     @JoinColumn(name = "donationUnit_id",nullable = false)
     private DonationUnit donationUnit;
 
-    @OneToMany(mappedBy = "event", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "event", fetch = FetchType.LAZY, cascade = CascadeType.ALL,orphanRemoval = true)
 //    @JsonIgnore
     @JsonManagedReference
     private List<Appointment> appointments;

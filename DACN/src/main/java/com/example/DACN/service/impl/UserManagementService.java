@@ -133,9 +133,12 @@ public class UserManagementService {
 //                var userInfo = userInfoRepo.findUserInfoByUserUsername(loginRequest.getCccd()).orElseThrow();
                 var jwt = jwtUtils.generateToken(user);
                 var refreshToken = jwtUtils.generateRefreshToken(new HashMap<>(), user);
+                var dto = Utils.mapUserEntityToUserDTO(user);
+
                 response.setCode(200);
                 response.setRole(user.getRole().getName());
                 response.setToken(jwt);
+                response.setUser(dto);
 //                response.setUserInfo(user.getUserInfo());
 //                response.setUser(user);
 //                response.setRefreshToken(refreshToken);

@@ -2,6 +2,7 @@ package com.example.DACN.controller;
 
 
 import com.example.DACN.dto.ApiResponse;
+import com.example.DACN.dto.HealthMetrics;
 import com.example.DACN.model.Appointment;
 import com.example.DACN.model.status.AppointmentStatus;
 import com.example.DACN.repository.AppointmentRepo;
@@ -14,14 +15,14 @@ import org.springframework.web.servlet.function.EntityResponse;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/appointment")
+@RequestMapping("/appointments")
 public class AppointmentController {
 
 
     @Autowired
     private AppointmentService appointmentService;
 
-    @GetMapping("/get-all")
+    @GetMapping("")
     public ResponseEntity<ApiResponse> getAll(){
             return ResponseEntity.ok(appointmentService.getAllAppointment());
     }
@@ -32,20 +33,34 @@ public class AppointmentController {
     }
 
     @PostMapping("/save")
-    public ResponseEntity<ApiResponse> saveAppointment(@RequestParam String username, @RequestParam Long eventId){
-        return ResponseEntity.ok(appointmentService.saveAppointment(username,eventId));
+    public ResponseEntity<ApiResponse> saveAppointment(
+            @RequestParam(value = "username") String username,
+            @RequestParam(value = "eventId") Long eventId,
+            @RequestBody HealthMetrics healthMetrics) {
+
+        ApiResponse response = appointmentService.saveAppointment(username, eventId, healthMetrics);
+        return ResponseEntity.ok(response);
     }
 
     @GetMapping("/by-user")
     public ResponseEntity<ApiResponse> getUserAppointment(@RequestParam String username){
         return ResponseEntity.ok(appointmentService.getUserAppointments(username));
     }
+    @GetMapping("/by-user-pending")
+    public ResponseEntity<ApiResponse> getAppointmentPendingUser(@RequestParam String username){
+        return ResponseEntity.ok(appointmentService.getAppointmentPendingUser(username));
+    }   
 
-    @PutMapping("/status/{id}")
-    public ResponseEntity<ApiResponse> updateAppointmentStatus(@PathVariable Long id, @RequestBody Map<String, String> statusRequest){
-        String status = statusRequest.get("status");
+    @PutMapping("/status")
+    public ResponseEntity<ApiResponse> updateAppointmentStatus(@RequestParam int id, @RequestParam String status){
+
+        Long inA = Long.parseLong(String.valueOf(id));
         AppointmentStatus newStatus = AppointmentStatus.valueOf(status.toUpperCase());
+        return ResponseEntity.ok(appointmentService.updateAppointmentStatus(inA,newStatus));
+    }
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<ApiResponse> deleteAppointment(@PathVariable Long id) {
+        return ResponseEntity.ok(appointmentService.deleteAppointment(id));
 
-        return ResponseEntity.ok(appointmentService.updateAppointmentStatus(id,newStatus));
     }
 }

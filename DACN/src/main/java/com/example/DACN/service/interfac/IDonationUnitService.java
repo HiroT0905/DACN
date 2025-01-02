@@ -4,14 +4,15 @@ import com.example.DACN.dto.ApiResponse;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
+import java.util.Map;
 
 public interface IDonationUnitService {
 
-    ApiResponse addNewUnit(MultipartFile photo, String name, String location, String email,String phone);
+    ApiResponse addNewUnit(Map<String,Object> unitData,MultipartFile photo);
 
     ApiResponse getAllUnit();
-    ApiResponse deleteUnit(Long id);
-    ApiResponse updateUnit(Long id, String name, String location, String email, MultipartFile photo, String phone);
+    ApiResponse deleteDonationUnit(Long id);
+    ApiResponse updateUnit(Long id, Map<String, Object> unitData , MultipartFile photo);
     ApiResponse getUnit(Long id);
 
 }

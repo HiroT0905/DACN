@@ -22,7 +22,6 @@ public class BloodDonationHistory {
 
     private String donationType;  // Loại hiến máu (toàn phần, tiểu cầu, huyết tương)
     private String reactionAfterDonation;  // Phản ứng sau khi hiến máu (Dizziness, Fatigue, v.v.)
-    private LocalDateTime nextDonationEligibleDate;  // Ngày đủ điều kiện cho lần hiến máu tiếp theo
 
 
 

@@ -1,7 +1,5 @@
 package com.example.DACN.exception;
 
-import com.example.DACN.dto.ApiResponse;
-import com.example.DACN.dto.EventDTO;
 import com.example.DACN.model.Event;
 import com.example.DACN.model.status.EventStatus;
 
@@ -10,7 +8,8 @@ import java.time.LocalTime;
 
 public class EventValidator {
 
-    public static void validateEvent(EventDTO event) {
+    public static void validateEvent(Event event) {
+
         if (!isValidDate(event.getEventDate())){
             throw new OurException("Date is not valid");
         }

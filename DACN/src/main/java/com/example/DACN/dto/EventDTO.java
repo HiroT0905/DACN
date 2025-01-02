@@ -13,7 +13,6 @@ import java.util.List;
 public class EventDTO {
     private Long id;
 
-    private String name;
     private LocalDate eventDate;
     private LocalTime eventStartTime;
     private LocalTime eventEndTime;

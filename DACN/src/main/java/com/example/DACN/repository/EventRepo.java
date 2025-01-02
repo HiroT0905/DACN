@@ -16,19 +16,11 @@ import java.util.List;
 public interface EventRepo extends JpaRepository<com.example.DACN.model.Event, Long> {
 
     public List<Event> findEventByEventDate(LocalDate date);
-    public List<Event>findEventByEventDateBetweenAndDonationUnit_Id(LocalDate startDate,LocalDate endDate, Long donationUnit_id);
-
-
+    public List<Event>findEventByEventDateAndDonationUnitId(LocalDate eventDate, Long donationUnit_id);
     @Query("SELECT e FROM Event e WHERE e.donationUnit.location = :location " +
             "AND e.eventEndTime > :startTime AND e.eventStartTime < :endTime")
     List<Event> findConflictingEvents(
             @Param("location") String location,
             @Param("startTime") LocalDateTime startTime,
             @Param("endTime") LocalDateTime endTime);
-    List<Event> findByDonationUnitId(Long donationUnitId);
-
-    // Xóa tất cả các sự kiện liên quan đến DonationUnit
-    void deleteByDonationUnitId(Long donationUnitId);
-
-    public List<Event> findEventsByEventDateBetween(LocalDate startDate, LocalDate endDate);
 }

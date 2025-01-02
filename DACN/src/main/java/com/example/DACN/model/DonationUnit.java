@@ -27,7 +27,7 @@ public class DonationUnit {
 
     private String unitPhotoUrl;
 
-    @OneToMany(mappedBy = "donationUnit", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "donationUnit", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Event> events;
 
 

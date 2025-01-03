@@ -1,5 +1,6 @@
 package com.example.DACN.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -16,9 +17,17 @@ import java.util.Set;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Role {
     @Id
-    private String name;
-    private String description;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    @ManyToMany
-    private Set<Permission> permissions = new HashSet<>();
+    private String name;
+
+    private String description;
+    @OneToMany(mappedBy = "role")
+    @JsonIgnore
+    private Set<User> users = new HashSet<>();
+
+    public Role(Long id){
+        this.id = id;
+    }
 }

@@ -1,58 +1,43 @@
 package com.example.DACN.exception;
 
-
-import com.example.DACN.dto.request.ApiResponse;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.http.HttpStatus;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import com.example.DACN.dto.request.ApiResponse;
-import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 
-@Slf4j
 @ControllerAdvice
+@RestController
 public class GlobalExceptionHandler {
 
-    private static final String MIN_ATTRIBUTE = "min";
-
-    @ExceptionHandler(value = Exception.class)
-    ResponseEntity<ApiResponse> handlingRuntimeException(RuntimeException exception) {
-        log.error("Exception: ", exception);
-        ApiResponse apiResponse = new ApiResponse();
-
-        apiResponse.setCode(ErrorCode.UNCATEGORIZED_EXCEPTION.getCode());
-        apiResponse.setMessage(ErrorCode.UNCATEGORIZED_EXCEPTION.getMessage());
-
-        return ResponseEntity.badRequest().body(apiResponse);
-    }
-    @ExceptionHandler(value = AppException.class)
-    ResponseEntity<ApiResponse> handlingAppException(AppException e) {
-        ErrorCode errorCode = e.getErrorCode();
-        ApiResponse response = new ApiResponse();
-        response.setCode(errorCode.getCode());
-        response.setMessage(errorCode.getMessage());
-
-        return ResponseEntity.badRequest().body(response);
+    // Xử lý khi thông tin tài khoản hoặc mật khẩu không đúng
+    @ExceptionHandler(BadCredentialsException.class)
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    public String handleBadCredentialsException(BadCredentialsException ex) {
+        return "Thông tin tài khoản hoặc mật khẩu không chính xác";
     }
 
-    @ExceptionHandler(value = MethodArgumentNotValidException.class)
-    ResponseEntity<ApiResponse> handlingMethodArgumentNotValidException(MethodArgumentNotValidException e) {
-        String enumkey = e.getBindingResult().getFieldError().getDefaultMessage();
-        ErrorCode errorCode = ErrorCode.valueOf(enumkey);
-        ApiResponse response = new ApiResponse();
-        response.setCode(errorCode.getCode());
-        response.setMessage(errorCode.getMessage());
-        return ResponseEntity.badRequest().body(response);
-
-    }
-    @ExceptionHandler(value = UserNotFoundException.class)
-    ResponseEntity<ApiResponse> handlingUserNotFoundException(UserNotFoundException e) {
-        ApiResponse response = new ApiResponse();
-        response.setCode(ErrorCode.USER_NOTFOUND.getCode());
-        response.setMessage(ErrorCode.USER_NOTFOUND.getMessage());
-        return ResponseEntity.status(500).body(response);
+    // Xử lý khi người dùng không tồn tại
+    @ExceptionHandler(UsernameNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public String handleUsernameNotFoundException(UsernameNotFoundException ex) {
+        return "Người dùng không tồn tại";
     }
 
-    public GlobalExceptionHandler() {
+    // Xử lý các lỗi xác thực khác
+    @ExceptionHandler(AuthenticationException.class)
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    public String handleAuthenticationException(AuthenticationException ex) {
+        return "Lỗi xác thực: " + ex.getMessage();
+    }
+
+    // Xử lý các ngoại lệ khác
+    @ExceptionHandler(Exception.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public String handleException(Exception ex) {
+        return "Lỗi hệ thống: " + ex.getMessage();
     }
 }

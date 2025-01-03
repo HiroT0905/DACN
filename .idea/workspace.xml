@@ -4,59 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f04e95a3-3de7-40d1-a713-d7b17d7f6e2e" name="Changes" comment="XÓa linh tinh">
-      <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/BloodInventoryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/FaqController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/HealthCheckController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/NewsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/BloodInventoryDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/FaqDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/HealthMetrics.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/NewsDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/exception/AppointmentValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/exception/BloodDonationUnitValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/model/BloodInventory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/model/Faq.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/model/News.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/repository/BloodInventoryRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/repository/FaqRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/repository/NewsRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/repository/PasswordResetTokenRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/repository/RoleRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/BloodInventoryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/FaqService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/HealthCheckService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/NewsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/interfac/IBloodInventoryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/interfac/IFaqService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/interfac/INewsService.java" afterDir="false" />
+    <list default="true" id="f04e95a3-3de7-40d1-a713-d7b17d7f6e2e" name="Changes" comment="Tất cả chức năng">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/AppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/AppointmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/DonationUnitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/DonationUnitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/EventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/ApiResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/ApiResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/AppointmentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/AppointmentDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/BloodDonationHistoryDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/EventDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/EventDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/exception/EventValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/exception/EventValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/model/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/model/Appointment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/model/BloodDonationHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/model/BloodDonationHistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/model/DonationUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/model/DonationUnit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/model/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/model/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/HealthMetrics.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/dto/HealthMetrics.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/model/Healthcheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/model/Healthcheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/model/status/AppointmentStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/model/status/AppointmentStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/repository/AppointmentRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/repository/AppointmentRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/repository/EventRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/repository/EventRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/AwsS3Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/AwsS3Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/AppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/AppointmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/DonationUnitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/DonationUnitService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/EventService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/UserManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/UserManagementService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/interfac/IAppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/interfac/IAppointmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/interfac/IDonationUnitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/interfac/IDonationUnitService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/interfac/IEventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/interfac/IEventService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,7 +193,8 @@
       <workItem from="1735739620929" duration="1300000" />
       <workItem from="1735753265779" duration="537000" />
       <workItem from="1735758368220" duration="8767000" />
-      <workItem from="1735791598304" duration="16370000" />
+      <workItem from="1735791598304" duration="38017000" />
+      <workItem from="1735913110114" duration="7051000" />
     </task>
     <task id="LOCAL-00001" summary="10.10">
       <option name="closed" value="true" />
@@ -291,7 +244,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735549918272</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Tất cả chức năng">
+      <option name="closed" value="true" />
+      <created>1735811795229</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1735811795229</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,7 +300,8 @@
     <MESSAGE value="CRUD" />
     <MESSAGE value="ResetPassword" />
     <MESSAGE value="XÓa linh tinh" />
-    <option name="LAST_COMMIT_MESSAGE" value="XÓa linh tinh" />
+    <MESSAGE value="Tất cả chức năng" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tất cả chức năng" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -580,7 +542,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/AppointmentController.java</url>
-          <line>49</line>
+          <line>56</line>
           <properties class="com.example.DACN.controller.AppointmentController" method="getAppointmentPendingUser">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -595,6 +557,15 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="137" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/controller/UserController.java</url>
+          <line>30</line>
+          <properties class="com.example.DACN.controller.UserController" method="registerUser">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="138" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/DACN/src/main/java/com/example/DACN/service/impl/UserManagementService.java</url>
@@ -641,6 +612,7 @@
         <PinnedItemInfo parentTag="com.example.DACN.model.Appointment" memberName="status" />
         <PinnedItemInfo parentTag="com.example.DACN.model.User" memberName="userInfo" />
         <PinnedItemInfo parentTag="com.example.DACN.service.impl.EventService" memberName="donationUnitRepo" />
+        <PinnedItemInfo parentTag="com.example.DACN.model.Healthcheck" memberName="healthMetrics" />
         <PinnedItemInfo parentTag="com.example.DACN.service.UserService" memberName="userMapper" />
         <PinnedItemInfo parentTag="com.example.DACN.dto.EventDTO" memberName="status" />
         <PinnedItemInfo parentTag="com.example.DACN.dto.EventDTO" memberName="name" />

@@ -37,16 +37,23 @@ public class Healthcheck {
 
     public boolean isValidHealthCheck() throws IOException {
         // Chuyển đổi healthMetrics từ chuỗi JSON thành đối tượng
-        ObjectMapper objectMapper = new ObjectMapper();
-        HealthMetrics metrics = objectMapper.readValue(this.healthMetrics, HealthMetrics.class);
 
-        // Logic kiểm tra điều kiện
-        if (!metrics.hasChronicDiseases && !metrics.hasRecentDiseases && !metrics.hasSymptoms && !metrics.isPregnantOrNursing && metrics.HIVTestAgreement) {
-            this.result = HealthCheckResult.PASS;
-            return true;
-        } else {
+        ObjectMapper objectMapper = new ObjectMapper();
+        HealthMetrics metrics;
+        try {
+            metrics = objectMapper.readValue(this.healthMetrics, HealthMetrics.class);
+        } catch (IOException e) {
             this.result = HealthCheckResult.FAIL;
             return false;
         }
+        boolean isValid = !metrics.hasChronicDiseases &&
+                !metrics.hasRecentDiseases &&
+                !metrics.hasSymptoms &&
+                !metrics.isPregnantOrNursing &&
+                metrics.HIVTestAgreement;
+
+        // Logic kiểm tra điều kiện
+        this.result = isValid ? HealthCheckResult.PASS : HealthCheckResult.FAIL;
+        return isValid;
     }
 }

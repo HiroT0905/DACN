@@ -35,10 +35,17 @@ public class AppointmentController {
     @PostMapping("/save")
     public ResponseEntity<ApiResponse> saveAppointment(
             @RequestParam(value = "username") String username,
-            @RequestParam(value = "eventId") Long eventId,
-            @RequestBody HealthMetrics healthMetrics) {
+            @RequestParam(value = "eventId") String eventId,
+            @RequestBody Map<String, Map<String, Boolean>> requestBody) {
+        System.out.println("Username: " + username);
+        System.out.println("Event ID: " + eventId);
+        System.out.println("Health Metrics: " + requestBody);
+        Map<String, Boolean> healthMetrics = requestBody.get("healthMetrics");
+        HealthMetrics health  = new HealthMetrics(healthMetrics);
 
-        ApiResponse response = appointmentService.saveAppointment(username, eventId, healthMetrics);
+        ApiResponse response = appointmentService.saveAppointment(username, Long.parseLong(eventId), health);
+        System.out.println("Kết quả: " + response);
+
         return ResponseEntity.ok(response);
     }
 
